@@ -16,7 +16,7 @@ class Post:
         self.location = location
         self.username = username
 
-    def display(self):
+    def display(self, screen:pygame.Surface):
         """
         Display the Post image/Text, description, location, likes and comments
         on screen
@@ -24,22 +24,6 @@ class Post:
         :return: None
         """
         # TODO: write me!
-        def main():
-            pygame.init()
-            global screen
-            screen_size = (WINDOW_WIDTH, WINDOW_HEIGHT)
-            screen = pygame.display.set_mode(screen_size)
-            finish = False
-            while not finish:
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        finish = True
-                    if event.type == event_type:
-                        #some code
-                pygame.display.flip()
-            pygame.QUIT
-
-        main()
 
 
 
@@ -69,5 +53,10 @@ class Post:
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
 
+class ImagePost(Post):
+    def __init__(self, image):
+        pass
 
-
+class TextPost(Post):
+    def __init__(self, text, text_color, background_color):
+        pass
