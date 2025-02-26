@@ -16,7 +16,13 @@ class Post:
         self.location = location
         self.username = username
 
-    def display(self, screen:pygame.Surface):
+    def add_like(self):
+        self.likes_counter += 1
+
+    def add_comment(self, text):
+        self.comments.append(text)
+
+    def display(self, screen: pygame.Surface):
         """
         Display the Post image/Text, description, location, likes and comments
         on screen
