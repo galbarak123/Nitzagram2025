@@ -1,12 +1,14 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+from classes.Post import Post
+from classes.Post import ImagePost
 
 
 def main():
     # Set up the game display, clock and headline
     pygame.init()
-
+    image1 = ImagePost("peleg", "beit yerach", "...", 0, "ew", (pygame.image.load('C:/Users/User/Desktop/nizanim/2_year/Nitzagram2025/Images/ronaldo.jpg')))
     # Change the title of the window
     pygame.display.set_caption('Nitzagram')
 
@@ -14,8 +16,7 @@ def main():
 
     # Set up background image
     background = pygame.image.load('Images/background.png')
-    background = pygame.transform.scale(background,
-                                        (WINDOW_WIDTH, WINDOW_HEIGHT))
+    background = pygame.transform.scale(background, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
 
@@ -30,7 +31,7 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-
+        image1.display()
         # Update display - without input update everything
         pygame.display.update()
 
